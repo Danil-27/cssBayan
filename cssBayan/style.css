@@ -1,6 +1,5 @@
 /*? Base */
 html {
-    font-size: 16px;
     font-size: 60%;
 }
 img {
@@ -10,7 +9,6 @@ body {
     font-weight: 600;
     font-family: sans-serif;
     font-size: 1.5rem;
-    height: 2000px;
 }
 
 /*? Для валидности в label  */
@@ -20,21 +18,16 @@ span {
 
 /*? Контейнер */
 .container {
-    max-width: 1100px;
+    max-width: 68rem;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left:  1rem;
+    padding-right: 1rem;
 }
 
 /*? ACCORDION  --------------------------------------------------------------------------------- */
 .accordion input:checked ~ .label .label__title {
     color: black;
-}
-
-/*TODO hover */
-.accordion:hover .label .label__icon {
-    display: block;
 }
 
 /*TODO active */
@@ -59,30 +52,25 @@ input ~ .label .label__content img {
     opacity: 0.4;
 }
 
-/*TODO hover */
-input ~ .label:hover .label__content img {
-    opacity: 1;
-}
-
 /*TODO checked  */
 input:checked ~ .label .label__content img {
     opacity: 1;
 }
 
 input[type="radio"]:checked + .label .label__content  {
-    height: 100px;
-    padding: 20px 0px;
+    height: 6rem;
+    padding-bottom: 1rem;
 }
 
 
 
 /*? label ------------------------------------------------------------------------------------------ */
 .label__head {
-    border-top: solid 2px black;
+    border-top: solid 0.125rem black;
     display: flex;
     align-items: center;
     height: 2rem;
-    padding: 20px 0;
+    padding: 1.25rem 0;
 }
 
  .label__title {
@@ -109,6 +97,8 @@ input[type="radio"]:checked + .label .label__content  {
     transition: transform 0.3s;
     transform: rotate(0deg);
     transition: color .3s ease-out;
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
 .label .label__content img {
@@ -116,16 +106,9 @@ input[type="radio"]:checked + .label .label__content  {
     max-width: 80%;
 }
 
-/*TODO  hover */
-.label:hover .label__icon {
-    transition: transform 0.3s;
-    transform: rotate(-45deg);
-}
 
-.label:hover .label__content {
-    height: 100px;
-    padding: 20px 0;
-}
+
+
 
 
 
@@ -139,6 +122,27 @@ input[type="radio"]:checked + .label .label__content  {
     .label {
         cursor: pointer;
     }
+
+    /*TODO  hover */
+    .label:hover .label__icon {
+    transition: transform 0.3s;
+    transform: rotate(-45deg);
+    }
+
+    .label:hover .label__content {
+        height: 6rem;
+        padding-bottom: 1rem ;
+    }
+    
+    /*TODO hover */
+    input ~ .label:hover .label__content img {
+        opacity: 1;
+    }
+
+    /*TODO hover */
+    .accordion:hover .label .label__icon {
+        display: block;
+    }
 }
 
 /* *медиа , для размера шрифта и паддингов phone/tablet/desctop */
@@ -149,15 +153,14 @@ input[type="radio"]:checked + .label .label__content  {
     html {
         font-size: 70%;
     }
-    .label:hover .label__content {
-        height: 150px;
-    }
+
     .label img {
         max-width: 80%;
     }
 
-    input[type="radio"]:checked + .label .label__content  {
-        height: 150px;
+    input[type="radio"]:checked + .label .label__content,
+    .label:hover .label__content  {
+        height: 12rem;
     }
 }
 
@@ -166,16 +169,13 @@ input[type="radio"]:checked + .label .label__content  {
         font-size: 80%;
     }
 
-    .label:hover .label__content {
-        height: 250px;
-    }
-
     .label img {
         max-width: 100%;
     }
 
-    input[type="radio"]:checked + .label .label__content  {
-        height: 250px;
+    input[type="radio"]:checked + .label .label__content,
+    .label:hover .label__content {
+        height: 15rem;
     }
 }
 @media screen and (min-width: 992px) {
@@ -183,11 +183,8 @@ input[type="radio"]:checked + .label .label__content  {
         font-size: 100%;
     }
 
+    input[type="radio"]:checked + .label .label__content,
     .label:hover .label__content {
-        height: 350px;
-    }
-
-    input[type="radio"]:checked + .label .label__content  {
-        height: 350px;
+        height: 22rem;
     }
 }
