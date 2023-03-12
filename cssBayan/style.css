@@ -1,11 +1,15 @@
 /*? Base */
+html {
+    font-size: 16px;
+    font-size: 60%;
+}
 img {
     max-width: 100%;
 }
 body {
     font-weight: 600;
     font-family: sans-serif;
-    font-size: 20px;
+    font-size: 1.5rem;
     height: 2000px;
 }
 
@@ -19,8 +23,8 @@ span {
     max-width: 1100px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 /*? ACCORDION  --------------------------------------------------------------------------------- */
@@ -64,9 +68,10 @@ input ~ .label:hover .label__content img {
 input:checked ~ .label .label__content img {
     opacity: 1;
 }
+
 input[type="radio"]:checked + .label .label__content  {
-    height: 350px;
-    padding: 30px 0px;
+    height: 100px;
+    padding: 20px 0px;
 }
 
 
@@ -75,15 +80,20 @@ input[type="radio"]:checked + .label .label__content  {
 .label__head {
     border-top: solid 2px black;
     display: flex;
-    height: 30px;
-    padding: 15px 0px;
+    align-items: center;
+    height: 2rem;
+    padding: 20px 0;
 }
 
  .label__title {
     color: rgb(51, 51, 170);
     margin-right: auto;
     transition: color .1s ease-out;
-    font-size: 35px;
+    font-size: 1.8rem;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .label > .label__content {
@@ -103,6 +113,7 @@ input[type="radio"]:checked + .label .label__content  {
 
 .label .label__content img {
     height: 100%;
+    max-width: 80%;
 }
 
 /*TODO  hover */
@@ -112,8 +123,8 @@ input[type="radio"]:checked + .label .label__content  {
 }
 
 .label:hover .label__content {
-    height: 350px;
-    padding: 30px 0px;
+    height: 100px;
+    padding: 20px 0;
 }
 
 
@@ -121,9 +132,62 @@ input[type="radio"]:checked + .label .label__content  {
 
 
 
+
 /*? media  ------------------------------------------------------------------------------------------ */
+/* * Для того чтобы  pointer не использовался для сенсорных поверхностей  */
 @media (hover: hover) {
     .label {
         cursor: pointer;
+    }
+}
+
+/* *медиа , для размера шрифта и паддингов phone/tablet/desctop */
+@media screen and (min-width: 320px) {
+
+}
+@media screen and (min-width: 400px) {
+    html {
+        font-size: 70%;
+    }
+    .label:hover .label__content {
+        height: 150px;
+    }
+    .label img {
+        max-width: 80%;
+    }
+
+    input[type="radio"]:checked + .label .label__content  {
+        height: 150px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    html {
+        font-size: 80%;
+    }
+
+    .label:hover .label__content {
+        height: 250px;
+    }
+
+    .label img {
+        max-width: 100%;
+    }
+
+    input[type="radio"]:checked + .label .label__content  {
+        height: 250px;
+    }
+}
+@media screen and (min-width: 992px) {
+    html {
+        font-size: 100%;
+    }
+
+    .label:hover .label__content {
+        height: 350px;
+    }
+
+    input[type="radio"]:checked + .label .label__content  {
+        height: 350px;
     }
 }
